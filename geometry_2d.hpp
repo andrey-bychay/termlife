@@ -13,12 +13,10 @@
 
 class Geometry2D : public Geometry {
     
-    class Coordinate2D: public Coordinate {
+    class Coordinates2D: public Coordinates {
         int x, y;
     public:
-        Coordinate2D(int x, int y)
-        : x(x), y(y)
-        {}
+        Coordinates2D(int x, int y);
     };
 public:
 };
