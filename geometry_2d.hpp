@@ -18,7 +18,8 @@ class Geometry2D : public Geometry {
     public:
         Coordinates2D(int x, int y);
     };
-public:
+    
+    virtual std::set<Location> getNeighbourhood(Location const & location);
 };
 
 #endif /* geometry_2d_hpp */

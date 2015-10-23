@@ -12,6 +12,11 @@
 void Evolution::process()
 {
     Space & space = Space::getInstance();
-    Space::Iterator it = space.enumerateEntities();
-    while (it.)
+    
+    Space::iterator it = space.begin();
+    Space::iterator end = space.end();
+    
+    while (it != end) {
+        ++it;
+    }
 }

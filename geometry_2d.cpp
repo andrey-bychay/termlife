@@ -7,3 +7,7 @@
 //
 
 #include "geometry_2d.hpp"
+
+std::set<Geometry::Location const> Geometry2D::getNeighbourhood(Location const & location) {
+    return location.getNeighbourhood();
+}

@@ -10,11 +10,15 @@
 #define entity_hpp
 
 #include "geometry.hpp"
-#include <list>
 
 class Entity {
+    Geometry::Location location;
 public:
-    bool isAlive();
+    inline
+    Geometry::Location const & getLocation() {
+        return location;
+    }
+    //    bool isAlive();
 };
 
 #endif /* entity_hpp */

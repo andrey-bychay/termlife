@@ -9,22 +9,28 @@
 #ifndef space_hpp
 #define space_hpp
 
-#include "geometry.cpp"
+#include "geometry.hpp"
 #include "entity.hpp"
 #include <map>
 
 class Space {
 public:
     typedef std::map<Geometry::Location, Entity> Storage;
-    typedef Storage::iterator Iterator;
+    typedef Storage::iterator iterator;
+    typedef Storage::const_iterator const_iterator;
     
     static Space & getInstance();
     
-    Iterator enumerateEntities();
-    
+    iterator begin();
+    const_iterator begin() const;
+    iterator end();
+    const_iterator end() const;
     
     bool isNotEmpty(Geometry::Location const & location) const;
-    Entity & getEntity(Geometry::Location const & location) const;
+    Entity & getEntity(Geometry::Location const & location);
+    
+private:
+    Storage storage;
 };
 
 #endif /* space_hpp */

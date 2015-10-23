@@ -7,3 +7,40 @@
 //
 
 #include "space.hpp"
+
+namespace {
+    Space space;
+}
+
+Space & Space::getInstance() {
+    return space;
+}
+
+Space::iterator Space::begin() {
+    return storage.begin();
+}
+
+Space::const_iterator Space::begin() const {
+    return storage.begin();
+}
+
+Space::iterator Space::end() {
+    return storage.end();
+}
+
+Space::const_iterator Space::end() const {
+    return storage.end();
+}
+
+bool Space::isNotEmpty(Geometry::Location const & location) const {
+    //return storage.find(location) != storage.end();
+    return false;
+}
+
+Entity & Space::getEntity(Geometry::Location const & location) {
+//    iterator it = storage.find(location);
+//    if (it != storage.end()) {
+//        return it->second;
+//    }
+    throw std::out_of_range("no entity if found at " + location.toString());
+}
