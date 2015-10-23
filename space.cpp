@@ -33,14 +33,13 @@ Space::const_iterator Space::end() const {
 }
 
 bool Space::isNotEmpty(Geometry::Location const & location) const {
-    //return storage.find(location) != storage.end();
-    return false;
+    return storage.find(location) != storage.end();
 }
 
 Entity & Space::getEntity(Geometry::Location const & location) {
-//    iterator it = storage.find(location);
-//    if (it != storage.end()) {
-//        return it->second;
-//    }
+    iterator it = storage.find(location);
+    if (it != storage.end()) {
+        return it->second;
+    }
     throw std::out_of_range("no entity if found at " + location.toString());
 }
